@@ -17,7 +17,7 @@ class Engine {
       equal: "=",
       sign: "+/-",
       allClear: "Clear",
-      square: "^",
+      square: "^2",
       squareRoot: "Sq root"
     };
   }
@@ -119,11 +119,19 @@ class Engine {
   }
 
   handleSquareOperation(){
-    return this.square(this.number);
+    if(this.number === ""){
+      this.number = "0";
+    }
+    this.number = this.square(this.number);
+    return this.number;
   }
 
   handleSquareRootOperation(){
-    return this.squareRoot(this.number);
+    if(this.number === ""){
+      this.number= "0";
+    }
+    this.number = this.squareRoot(this.number);
+    return this.number;
   }
 
   // Paramter operation is one of add, subtract, multiply or divide

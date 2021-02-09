@@ -177,7 +177,7 @@ export const ScientificButtons = ({ buttonEnabled, handleButtonClick }) =>
         onClick={handleButtonClick}
       />
       <Button
-        value="^"
+        value="^2"
         className="button sciButton"
         onClick={handleButtonClick}
       />
