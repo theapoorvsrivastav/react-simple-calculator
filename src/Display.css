@@ -1,0 +1,13 @@
+.display {
+  width: 100%;
+  background-color: #323232;
+  font-size: 2rem;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column-reverse;
+}
+
+.displaySpan {
+  margin: 1rem;
+}
