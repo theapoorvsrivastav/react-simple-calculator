@@ -1,0 +1,24 @@
+.colorToggle{
+  width: 100%;
+  button{
+    width: 50%;
+    font-size: 1.5rem;
+  }
+  .currentToggle{
+    background: #000000;
+    color: #ffffff;
+  }
+}
+
+.lightMode{
+  button{
+    background: #f0f0f0;
+    color: #000000;
+  }
+}
+.darkMode{
+  button{
+    background: #666666;
+    color: #ffffff;
+  }
+}

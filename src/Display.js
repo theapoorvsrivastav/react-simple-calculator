@@ -1,5 +1,5 @@
 import React from 'react';
-import './Display.css';
+import './Display.scss';
 
 export const Display = (props) =>(
   <div className="display">

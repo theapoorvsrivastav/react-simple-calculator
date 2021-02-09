@@ -253,9 +253,6 @@ class Engine {
     }
     return number;
   }
-  containDecimalPoint(number) {
-    return number.includes(".");
-  }
 }
 
 export default Engine;

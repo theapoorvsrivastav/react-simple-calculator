@@ -1,6 +1,8 @@
 .button {
   width: 20%;
   font-size: 1.5rem;
+  background: #f0f0f0;
+  color: #000;
 }
 
 .button:focus {

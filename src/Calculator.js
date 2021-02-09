@@ -2,7 +2,7 @@ import React from 'react';
 import Engine from './Engine.js';
 import Display from './Display.js';
 import Button from './Button.js';
-import './Calculator.css';
+import './Calculator.scss';
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -14,6 +14,11 @@ class Calculator extends React.Component {
     };
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.handleScienceClick = this.handleScienceClick.bind(this);
+    this.handleLightMode = this.handleLightMode.bind(this);
+    this.handleDarkMode = this.handleDarkMode.bind(this);
+    this.calculatorDom = React.createRef();
+    this.lightNode = React.createRef();
+    this.darkNode = React.createRef();
   }
 
   handleButtonClick(value) {
@@ -28,9 +33,28 @@ class Calculator extends React.Component {
     });
   }
 
+  handleLightMode(){
+    let lightNode = this.lightNode.current;
+    let darkNode = this.darkNode.current;
+    let calcNode = this.calculatorDom.current;
+    darkNode.className= "";
+    lightNode.className="currentToggle";
+    calcNode.offsetParent.className="lightBg";
+    calcNode.className = "lightMode";
+  }
+  handleDarkMode(){
+    let lightNode = this.lightNode.current;
+    let darkNode = this.darkNode.current;
+    let calcNode = this.calculatorDom.current;
+    lightNode.className = "";
+    calcNode.offsetParent.className="darkBg";
+    darkNode.className = "currentToggle";
+    calcNode.className = "darkMode";
+  }
+
   render() {
     return (
-      <div className="calculator">
+      <div ref={this.calculatorDom}>
         <Display display={this.state.display} />
         <Button
           value="1"
@@ -129,7 +153,12 @@ class Calculator extends React.Component {
             buttonEnabled={this.state.isScientificEnabled} 
             handleButtonClick={this.handleButtonClick} /> 
           : null}
+          <div className="colorToggle">
+            <button ref={this.lightNode} className="currentToggle" onClick={this.handleLightMode}>Light Mode</button>
+            <button ref={this.darkNode} onClick={this.handleDarkMode}>Dark Mode</button>
+        </div>
       </div>
+      
     );
   }
 }
