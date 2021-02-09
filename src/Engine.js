@@ -47,7 +47,7 @@ class Engine {
       input === this.OperationEnum.multiplication ||
       input === this.OperationEnum.division
     ) {
-      return this.handleBaiscMathOperation(input);
+      return this.handleBasicMathOperation(input);
     }
 
     if (input === this.OperationEnum.sign) {
@@ -71,7 +71,7 @@ class Engine {
   }
 
   // Only handle basic +, -, /, x operations
-  handleBaiscMathOperation(input) {
+  handleBasicMathOperation(input) {
     this.repeatNumber = null;
     this.repeatOperation = null;
     if (this.previousNumber == null) {
