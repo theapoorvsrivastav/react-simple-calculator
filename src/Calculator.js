@@ -10,7 +10,7 @@ class Calculator extends React.Component {
     this.state = {
       display: "0",
       engine: new Engine(),
-      isScientificEnabled: true
+      isScientificEnabled: false
     };
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.handleScienceClick = this.handleScienceClick.bind(this);
@@ -121,7 +121,7 @@ class Calculator extends React.Component {
           onClick={this.handleButtonClick}
         />
         <Button value="Scientific Mode"
-          className="button signButton"
+          className="button customButton"
           onClick={this.handleScienceClick}
         />
         {this.state.isScientificEnabled ? 
@@ -139,17 +139,17 @@ export const ScientificButtons = ({ buttonEnabled, handleButtonClick }) =>
     <div>
       <Button
         value="+/-"
-        className="button"
+        className="button sciButton"
         onClick={handleButtonClick}
       />
       <Button
         value="Sq root"
-        className="button"
+        className="button sciButton"
         onClick={handleButtonClick}
       />
       <Button
         value="^"
-        className="button"
+        className="button sciButton"
         onClick={handleButtonClick}
       />
     </div>
