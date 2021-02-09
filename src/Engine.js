@@ -228,7 +228,6 @@ class Engine {
   }
 
   square(number){
-    debugger;
     return (parseFloat(number) * parseFloat(number)).toString();
   }
 
