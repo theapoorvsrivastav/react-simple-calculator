@@ -1,4 +1,4 @@
-# react-calculator-test
+# react-simple-calculator
 a simple react calculator component
 
 Goal 1
